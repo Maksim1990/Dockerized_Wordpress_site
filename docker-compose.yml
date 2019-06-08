@@ -1,0 +1,32 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:5.7
+    #command: --init-file /data/app/init.sql
+    volumes:
+        - ./mysql:/var/lib/mysql
+        #- ./docker/mysql/init_dump.sql:/data/app/init.sql
+    ports:
+      - '8911:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+
+  wordpress:
+    depends_on:
+      - db
+    build:
+      context: ./
+      dockerfile: ./docker/wordpress/Dockerfile
+    ports:
+      - "8109:80"
+    restart: always
+    container_name: wordpress_app
+    volumes:
+      - ./wordpress:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${DB_NAME}

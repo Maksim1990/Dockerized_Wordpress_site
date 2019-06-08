@@ -1,0 +1,81 @@
+
+	    /*  
+            body, html {
+	          height: 100%;
+	          margin: 0;
+	          -webkit-font-smoothing: antialiased;
+	          font-weight: 100;
+	          background: #E8EBAA;
+	          text-align: center;
+	          font-family: helvetica;
+	      }
+	      */
+	      .tabs_enjoy input[type=radio] {
+	          position: absolute;
+	          top: -9999px;
+	          left: -9999px;
+                  
+	      }
+              .ac-container input {
+
+                   display: initial !important;
+              }
+              .ei_settings_float_block{
+                  font-size:12px;
+              }
+              .ei_settings_float_block input[type=radio] {
+	          position: static;
+                  display: initial;
+	      }
+              .ei_settings_float_block input[type=number] {
+                  display: initial;
+	      }
+              
+              #enjoyinstagram_user_or_hashtag_hashtag input[type=text] {
+                  display: initial;
+              }
+	      .tabs_enjoy {
+	        
+	        float: none;
+	        list-style: none;
+	        position: relative;
+	        padding: 0;
+	        margin: 20px;
+	      }
+	      .tabs_enjoy li{
+	        float: left;
+	      }
+	      .tabs_enjoy label {
+	          display: block;
+	          padding: 10px 20px;
+	          border-radius: 2px 2px 0 0;
+	          color: #000;
+	          font-size: 16px;
+	          font-weight: normal;
+	          background: rgba(255,255,255,0.2);
+	          cursor: pointer;
+	          position: relative;
+	          top: 3px;
+	          -webkit-transition: all 0.2s ease-in-out;
+	          -moz-transition: all 0.2s ease-in-out;
+	          -o-transition: all 0.2s ease-in-out;
+	          transition: all 0.2s ease-in-out;
+                  border: 1px solid #ccc;
+	      }
+	      .tabs_enjoy label:hover {
+	        background: rgba(255,255,255,0.5);
+	        top: 0;
+	      }
+	      
+	      [id^=tab]:checked + label {
+	        background: #ccc;
+	        color: white;
+	        top: 0;
+	      }
+	      
+	      [id^=tab]:checked ~ [id^=enin-tab-content] {
+	          display: block;
+	      }
+	      
+	   
+              
